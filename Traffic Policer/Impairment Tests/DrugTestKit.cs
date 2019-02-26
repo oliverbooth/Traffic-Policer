@@ -77,7 +77,7 @@ namespace Traffic_Policer.Impairment_Tests
                                     uint noti = Game.DisplayNotification("Waiting for ~b~drugalyzer~s~ result...");
                                     if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                                     {
-                                        API.LSPDFRPlusFunctions.AddCountToStatistic(TrafficPolicerHandler.LSPDFRPlusSecurityGuid, "Drugalyzer tests conducted");
+                                        API.LSPDFRPlusFunctions.AddCountToStatistic(TrafficPolicerHandler.TrafficPolicerPluginName, "Drugalyzer tests conducted");
                                     }
 
                                     GameFiber.Sleep(4000);
@@ -98,7 +98,7 @@ namespace Traffic_Policer.Impairment_Tests
                                                         TrafficPolicerHandler.PedsToChargeWithDrugDriving.Add(nearestPed);
                                                         if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                                                         {
-                                                            API.LSPDFRPlusFunctions.AddCountToStatistic(TrafficPolicerHandler.LSPDFRPlusSecurityGuid, "People caught driving over drugs limit");
+                                                            API.LSPDFRPlusFunctions.AddCountToStatistic(TrafficPolicerHandler.TrafficPolicerPluginName, "People caught driving over drugs limit");
                                                         }
                                                     }
                                                 }
@@ -120,7 +120,7 @@ namespace Traffic_Policer.Impairment_Tests
                                                 TrafficPolicerHandler.PedsToChargeWithDrugDriving.Add(nearestPed);
                                                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                                                 {
-                                                    API.LSPDFRPlusFunctions.AddCountToStatistic(TrafficPolicerHandler.LSPDFRPlusSecurityGuid, "People caught driving over drugs limit");
+                                                    API.LSPDFRPlusFunctions.AddCountToStatistic(TrafficPolicerHandler.TrafficPolicerPluginName, "People caught driving over drugs limit");
                                                 }
                                             }
                                         }

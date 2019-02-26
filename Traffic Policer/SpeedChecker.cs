@@ -447,12 +447,12 @@ namespace Traffic_Policer
                                                 TargetFlag = "Owner Wanted";
                                                 FlagsTextColour = Color.Red;
                                             }
-                                            else if (Functions.GetPersonaForPed(veh.Driver).LicenseState == LSPD_First_Response.Engine.Scripting.Entities.ELicenseState.Suspended)
+                                            else if (Functions.GetPersonaForPed(veh.Driver).ELicenseState == LSPD_First_Response.Engine.Scripting.Entities.ELicenseState.Suspended)
                                             {
                                                 TargetFlag = "Licence Suspended";
                                                 FlagsTextColour = Color.Red;
                                             }
-                                            else if (Functions.GetPersonaForPed(veh.Driver).LicenseState == LSPD_First_Response.Engine.Scripting.Entities.ELicenseState.Expired)
+                                            else if (Functions.GetPersonaForPed(veh.Driver).ELicenseState == LSPD_First_Response.Engine.Scripting.Entities.ELicenseState.Expired)
                                             {
                                                 TargetFlag = "Licence Expired";
                                                 FlagsTextColour = Color.Orange;

@@ -12,6 +12,8 @@ using Albo1125.Common.CommonLibrary;
 
 namespace Traffic_Policer.Callouts
 {
+    using LSPD_First_Response.Engine.Scripting.Entities;
+
     //public enum reasonOwnerWanted { Murder, Robbery, Shoplifting }
     [CalloutInfo("OwnerWanted", CalloutProbability.Medium)]
     internal class OwnerWanted : Callout
@@ -328,8 +330,15 @@ namespace Traffic_Policer.Callouts
             
             driverBlip = driver.AttachBlip();
             driverBlip.Scale = 0.7f;
-            LSPD_First_Response.Engine.Scripting.Entities.Persona oldpersona = Functions.GetPersonaForPed(driver);
-            LSPD_First_Response.Engine.Scripting.Entities.Persona newpersona = new LSPD_First_Response.Engine.Scripting.Entities.Persona(driver, oldpersona.Gender, oldpersona.BirthDay, oldpersona.Citations, oldpersona.Forename, oldpersona.Surname, oldpersona.LicenseState, oldpersona.TimesStopped, true, false, false);
+            Persona oldpersona = Functions.GetPersonaForPed(driver);
+            Persona newpersona =
+                new Persona(oldpersona.Forename, oldpersona.Surname, oldpersona.Gender, oldpersona.Birthday)
+                {
+                    Citations     = oldpersona.Citations,
+                    TimesStopped  = oldpersona.TimesStopped,
+                    ELicenseState = oldpersona.ELicenseState
+                };
+
             Functions.SetPersonaForPed(driver, newpersona);
             
             

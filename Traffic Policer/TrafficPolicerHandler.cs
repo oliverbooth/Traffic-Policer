@@ -400,7 +400,7 @@ namespace Traffic_Policer
         public static bool IsBritishPolicingScriptRunning = false;
         public static bool IsLSPDFRPlusRunning = false;
 
-        public static Guid LSPDFRPlusSecurityGuid;
+        public static string TrafficPolicerPluginName = "Traffic Policer";
         /// <summary>
         /// The main loop of the plugin
         /// </summary>
@@ -437,7 +437,7 @@ namespace Traffic_Policer
                 IsLSPDFRPlusRunning = IsLSPDFRPluginRunning("LSPDFR+", new Version("1.4.0.0"));
                 if (IsLSPDFRPlusRunning)
                 {
-                    LSPDFRPlusSecurityGuid = API.LSPDFRPlusFunctions.GenerateSecurityGuid("Traffic Policer", "Albo1125", "EnddxsXdvFd9/doB9rfiEt3V4fXTXOBYrgHjnMVMskM7yE5YEQE+RMBWqDCE7AjX2OYhWznGo6t/pDLfXCWhjUbDqzpCWm0kDxtdhQpp8QPATz42+AEKWTI5f0bq3JQ+hQMtajWaOsq9YZV8udEBfqJT0X/fzjOxG+dMWe9fc/E=");
+                    TrafficPolicerPluginName = "Traffic Policer";
                 }
 
                 //Low priority loop
